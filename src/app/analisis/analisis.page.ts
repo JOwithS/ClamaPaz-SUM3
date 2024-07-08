@@ -1,18 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import * as L from 'leaflet';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ViewChild, ElementRef } from '@angular/core';
-import { MapType } from '@angular/compiler';
-import { Plugins }  from '@capacitor/core';
-
-
-const {Geolocation} = Plugins;
-declare var google: any;
-declare var google: any;
 
 @Component({
   selector: 'app-analisis',
@@ -20,8 +11,8 @@ declare var google: any;
   styleUrls: ['./analisis.page.scss'],
 })
 export class AnalisisPage implements OnInit {
-  private map: L.Map = {} as L.Map;
-  @ViewChild('mapContainers', { static: false}) mapContainer: ElementRef | undefined;
+ 
+  
   
   foto: SafeResourceUrl | undefined;
   nombre: string = '';
@@ -114,33 +105,6 @@ export class AnalisisPage implements OnInit {
     window.location.href = url;
   }
 
-/*
-  async loadMap(){
-    try{
-      const{ Geolocation } = Plugins;
-      const coordinates = await Geolocation['getCurrentPosition']();
-
-      const mapOptions = {
-        center: new google.maps.LatLng(coordinates.coords.latitude, coordinates.coords.longitude),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-
-      this.map = new google.maps.Map(this.mapContainer?.nativeElement, mapOptions);
-
-      //marcador
-      const marker = new google.maps.Marker({
-        position: mapOptions.center,
-        map: this.map,
-        title:  'Ubicacion actual'
-      });
-
-    }catch (error) {
-      console.error('Error al cargar el mapa ', error);
-    }
-
-  }
-*/
   async tomarFoto() {
     try {
       const fotoCapturada = await Camera.getPhoto({

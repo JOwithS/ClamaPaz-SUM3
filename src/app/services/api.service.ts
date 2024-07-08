@@ -6,11 +6,10 @@ import { throwError } from 'rxjs';
 import { LocalStorageService } from '../localstorage.service';
 
 @Component({
-  selector: 'app-apirest',
-  templateUrl: './apirest.page.html',
-  styleUrls: ['./apirest.page.scss'],
+  selector: 'app-apiservice',
+
 })
-export class ApirestPage implements OnInit {
+export class ApiService implements OnInit {
   financialData: any[] = [];
 
   constructor(

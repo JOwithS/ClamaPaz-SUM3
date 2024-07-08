@@ -1,13 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LocalstorageService } from './localstorage.service';
+import { LocalStorageService } from './localstorage.service';
+import { IonicStorageModule,  Storage  } from '@ionic/storage-angular';
 
 describe('LocalstorageService', () => {
-  let service: LocalstorageService;
+  let service: LocalStorageService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(LocalstorageService);
+    TestBed.configureTestingModule({
+      imports: [
+        IonicStorageModule.forRoot(),
+      ],
+      providers: [
+        LocalStorageService,
+        {
+          provide: Storage,
+          useFactory: () => localStorage, 
+        }
+      ],
+    });
+    service = TestBed.inject(LocalStorageService);
   });
 
   it('should be created', () => {

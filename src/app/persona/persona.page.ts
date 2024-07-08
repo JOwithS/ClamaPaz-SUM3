@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-/*import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-persona',
@@ -7,17 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./persona.page.scss'],
 })
 export class PersonaPage implements OnInit {
-  listado = [];
+  hide = true;
+  username: string = "";
+  password: string = "";
 
-  constructor(private api: ApiService) { }
+  constructor() {}
 
   ngOnInit() {
-  }
-  listar()
-  {
-    this.api.getUsers();
-    this.listado = this.api.listado;
-  }
 
+  }
 }
-*/

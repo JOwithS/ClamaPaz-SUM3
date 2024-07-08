@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { GoogleMapsComponent } from '../google-maps/google-maps.component';
 import { MenuController, ModalController } from '@ionic/angular';
 
 @Component({
@@ -74,17 +73,8 @@ export class HomePage implements OnInit {
       lng: -78.99958149999999
     };
 
-    const modalAdd = await this.modalController.create({
-      component: GoogleMapsComponent,
-      mode: 'ios',
-      componentProps: { position: positionInput }
-    });
-    
-    await modalAdd.present();
-    const { data } = await modalAdd.onWillDismiss();
-    if (data && data.pos) {
-      console.log('data ->', data);
-    }
+
+  
   }  
 
   async guardarUbicacionSeleccionada(ubicacion: { lat: number, lng: number }) {
