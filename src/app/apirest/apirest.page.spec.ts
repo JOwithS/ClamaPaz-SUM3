@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed,  waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LocalStorageService } from '../localstorage.service';

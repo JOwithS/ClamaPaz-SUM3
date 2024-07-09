@@ -2,9 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from '@angular/router/testing';
-
 import { HomePage } from './home.page';
-import { StorageService } from '../services/storage.service';  // Asegúrate de importar tu StorageService
+import { StorageService } from '../services/storage.service';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 describe('HomePage', () => {
